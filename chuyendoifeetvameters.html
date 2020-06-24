@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <p>
+            <label>Feet</label>
+            <input type="number" id="feet" placeholder="feet"
+                   oninput="aaaa(this.value)"
+                   onchange="aaaa(this.value)">
+        </p>
+        <p>Meters: <span id="meters"></span></p>
+    </form>
+    <script>
+        function aaaa(x) {
+            meter = x * 0.305;
+            document.getElementById('meters').innerHTML = meter
+        }
+    </script>
+    <form>
+        <p>
+            <label>Meters</label>
+            <input type="number" id="meters" placeholder="meters"
+                   oninput="aaaaa(this.value)"
+                   onchange="aaaaa(this.value)">
+        </p>
+        <p>Feet: <span id="feets"></span></p>
+    </form>
+    <script>
+        function aaaaa(y) {
+            feet = y * 3.279;
+            document.getElementById('feets').innerHTML = feet
+        }
+    </script>
+</body>
+</html>

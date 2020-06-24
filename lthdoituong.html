@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Mobile {
+            status; pin; nhap; inbox; sent;
+            constructor(pin) {
+                this.status = false;
+                this.pin = pin;
+                this.nhap = " ";
+                this.inbox = [];
+                this.sent = [];
+            }
+            isOn(){return status} 
+            toggleMode() {this.status = !this.status}
+            charge() {if (this.pin < 100) this.pin++}
+            text(content) {this.nhap = content}
+        }
+    </script>
+</body>
+</html>

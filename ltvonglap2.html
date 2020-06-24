@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        let fact = +prompt('số giai thừa cần tính là: ');
+        let result = 1
+        for (i = 1; i <= fact; i++) {   
+            result = result * i;
+        }
+        alert(result)
+    </script> -->
+    <!-- <script>   
+        let long = "*";
+        for (i = 1; i <= 5; i++) {
+            for (j = 1; j <= i  ; j++) {
+                document.write(long);
+            }
+            document.write('<br>');
+        }
+    </script> -->
+    <script>
+        let long = "*";
+        let n = +prompt('nhap n: ');
+        for ( i = 1; i <= n; i++) {
+            document.write(long);
+        }
+        document.write('<br>');
+        for (j = 1; j <= 5; j++) {
+            document.write(long);
+            for (o = 1; o <= n-2; o++) {
+                document.write("&nbsp;&nbsp");
+            } 
+            document.write(long);
+            document.write("<br>");
+        }
+        for ( i = 1; i <= n; i++) {
+            document.write(long);
+        }
+        
+
+    </script>
+</body>
+</html>

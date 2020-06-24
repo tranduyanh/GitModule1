@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = +prompt('Thích mấy số nguyên tố cu Vinh : ');
+        let count = 0;
+        let N = 2;
+        while (count < num) {
+            soNguyenTo(N)
+            N++;
+        }
+        function soNguyenTo(num) {
+            let check = true;
+            for (let i = 2; i < num; i++) {
+                if (num % i == 0) { check = false; };
+            }
+            if (check) {
+                document.write(num + "   ");
+                count++;
+            }
+        }
+        
+    </script>
+</body>
+</html>

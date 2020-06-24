@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="zetdeptrai" name="aa"/>
+    <button onclick="anh();">Tim Kiem</button>
+    <script>
+        function anh() {
+        let quangngu = ["Big Car", "New", "Banana", "Red", "Blue", "Money", "Dog", "Cat", "Panda"];
+        let vuiga = ["Xe Lon", "Moi", "Chuoi", "Do", "Xanh", "tien", "Cho", "meo", "Gau Truc" ];
+        let check= true
+        for (let i = 0; i < quangngu.length; i++) {
+            if (document.getElementById("zetdeptrai").value == quangngu[i]) {
+                document.write(vuiga[i]);
+                check = false;
+            }
+        }
+        if(check){
+           document.write('co cc') 
+        }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>Type anthing slowly</h2>
+        <textarea style="font-size: 40px;" name="" id="textarea" cols="50" rows="10" oninput="onTypeText(textarea)"></textarea>
+    </div>
+    <script>
+        var fakeText = "Vui la 1 thang ngoc!";
+        function onTypeText(textarea) {
+            console.log(textarea.value);
+            const length = textarea.value.length;   
+            const arrayStr =[];
+            if (length <= fakeText.length) {
+                for (let i = 0; i < length; i++){
+                    arrayStr.push(fakeText[i])
+                }
+            }
+            const result = arrayStr.join("");
+            textarea.value=result;
+        }
+    </script>
+</body>
+</html>

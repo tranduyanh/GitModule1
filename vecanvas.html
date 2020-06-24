@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="300" height="150" style="border: 1px solid #000000;">Your browser does not support the HTML5 canvas tag.</canvas>
+    <script>
+        class Circle{
+            radius;
+            color;
+            constructor(radius,color){
+                this.radius = radius
+                this.color = color
+            }
+            getArea() {
+                return this.radius * this.darius * 3.14
+            }
+            getPerimeter(){
+                return this.radius * 2 * 3.14
+            }
+            draw (canvas, x, y) {
+                let context = canvas.getContext("2d");
+
+                context.beginPath();
+                context.arc(x, y, this.radius, 0, 2 * Math.Pi);
+                context.fillStyle = this.color;
+                context.fill();
+                context.stroke();
+            }
+        }
+        let circle = new Circle(50, "orange");
+        let canvas1 = document.getElementById("myCanvas1");
+        let canvas2 = document.getElementById("myCanvas2");
+        circle.draw(canvas2, 100, 100);
+        console.log(circle.getArea());
+        console.log(circle.getPerimeter());
+    </script>
+        
+</body>
+</html>

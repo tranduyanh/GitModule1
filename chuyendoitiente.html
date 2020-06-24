@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Amount</td>
+            <td>From Currency</td>
+            <td>To Currency</td>
+        </tr>
+    </table>
+    <input type="text" id="Amount" name="12" placeholder="12" size="15"/>
+    <select name="vietnam" id="vietnam">
+        <option value="VND">Viet Nam</option>
+        <option value="EUR">EUR</option>
+    </select>
+    <select name="eur" id="eur">
+        <option value="EUR">EUR</option>
+        <option value="VND">VND</option>
+    </select>
+    <button onclick="convert();" class="vinh">Convert</button>
+    <script>
+        function convert(){
+            let duyAnh = +document.getElementById("Amount").value;
+            let vinh = document.getElementById("vietnam").value;
+            let vinh1 = document.getElementById("eur").value;
+            if(vinh==="VND"){
+                if(vinh1==="EUR"){
+                alert(duyAnh/23000);
+                }else{
+                    alert(duyAnh);
+                }
+            }else{
+            alert(duyAnh*23000)
+            }
+        }
+    </script>
+</body>
+</html>

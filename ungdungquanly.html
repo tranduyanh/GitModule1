@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QLSP</title>
+</head>
+
+<body>
+    <h1>Ứng dụng quản lý sản phẩm</h1>
+    ​
+    <h2>Add New Product</h2>
+    ​
+    <div>
+        <input id="inputText" type="text" />
+        <button onclick="addProduct(inputText.value)">Add</button>
+        <button style="display: none;" id="updateBtn" onclick="updateProduct(inputText.value)">
+            Update
+        </button>
+    </div>
+    ​
+    <h2>Display All Product</h2>
+    ​
+    <h4>Product Name</h4>
+    ​
+    <table id="productsContainer"></table>
+    ​
+    <script>
+        // KHAI BÁO
+        // Danh sách sản phẩm (Tên sản phẩm)
+        var productList = ["Sony Experia", "Samsung Galaxy", "Nokia 7"];
+
+        // Chỉ số của phần tử đang được sửa
+        var currentEditIndex = null;
+
+        // Thêm sản phẩm vào danh sách
+        function addProduct(productName) {
+            productList.push(productName);
+
+            displayProductList();
+        }
+
+        function editProduct(currentName, index) {
+            document.getElementById("inputText").value = currentName;
+            currentEditIndex = index;
+
+            displayProductList();
+        }
+
+        // Sửa sản phẩm trong danh sách
+        function updateProduct(newName) {
+            console.log("called updated");
+            productList[currentEditIndex] = newName;
+            currentEditIndex = null;
+
+            displayProductList();
+        }
+
+        // Xoá sản phẩm khỏi danh sách
+        function deleteProduct(index) {
+            productList.splice(index, 1);
+
+            displayProductList();
+        }
+
+        // Vẽ danh sách ra màn hình
+        // Duyệt qua từng phần tử của danh sách sản phẩm productList
+        // Nối nội dung cần hiển thị đối với phần tử lại với nhau
+        // Vẽ ra (gán nội dung innerHtml) tại thẻ table có id là productsContainer
+        function displayProductList() {
+            let content = "";
+
+            for (let i = 0; i < productList.length; ++i) {
+                let productName = productList[i];
+                content += `
+                <tr>
+                    <td>${productList[i]}</td>
+                    <td>
+                        <button onclick="editProduct('${productList[i]}', ${i})">Edit</button>
+                    </td>
+                    <td>
+                        <button onclick="deleteProduct(${i})">Delete</button>
+                    </td>
+                </tr>
+                `;
+            }
+
+            document.getElementById("productsContainer").innerHTML = content;
+
+            if (currentEditIndex || currentEditIndex == 0) {
+                document.getElementById("updateBtn").style.display = "inline-block";
+            } else {
+                document.getElementById("updateBtn").style.display = "none";
+            }
+        }
+
+        // CHƯƠNG TRÌNH
+        displayProductList();
+    </script>
+</body>
+
+</html>
